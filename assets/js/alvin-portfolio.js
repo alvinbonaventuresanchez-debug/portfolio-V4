@@ -25,6 +25,136 @@ document.addEventListener("DOMContentLoaded", () => {
   const projectCategories = document.querySelectorAll(".project-category");
 
   if (projectCategories.length > 0) {
+    const maxVisibleProjectEntries = 8;
+    const getProjectCarouselPageSize = () => {
+      if (window.innerWidth <= 620) {
+        return 2;
+      }
+
+      if (window.innerWidth <= 900) {
+        return 4;
+      }
+
+      if (window.innerWidth <= 1200) {
+        return 6;
+      }
+
+      return 8;
+    };
+
+    const projectOverflowCarousels = [];
+
+    const initializeProjectOverflowCarousel = (category) => {
+      const projectList = category.querySelector(".project-list");
+
+      if (!projectList) {
+        return;
+      }
+
+      const entries = Array.from(projectList.children).filter((item) =>
+        item.classList.contains("project-entry"));
+
+      if (entries.length <= maxVisibleProjectEntries) {
+        return;
+      }
+
+      const carousel = document.createElement("div");
+      carousel.className = "project-carousel";
+      carousel.innerHTML = `
+        <div class="project-carousel-header">
+          <p class="project-carousel-label">Autres visuels</p>
+          <div class="project-carousel-controls">
+            <span class="project-carousel-status" aria-live="polite"></span>
+            <button class="project-carousel-arrow" type="button" data-direction="prev" aria-label="Voir les elements precedents">&larr;</button>
+            <button class="project-carousel-arrow" type="button" data-direction="next" aria-label="Voir les elements suivants">&rarr;</button>
+          </div>
+        </div>
+        <div class="project-carousel-viewport">
+          <div class="project-carousel-track"></div>
+        </div>
+      `;
+
+      projectList.replaceWith(carousel);
+
+      const track = carousel.querySelector(".project-carousel-track");
+      const status = carousel.querySelector(".project-carousel-status");
+      const previousButton = carousel.querySelector('[data-direction="prev"]');
+      const nextButton = carousel.querySelector('[data-direction="next"]');
+      const carouselState = {
+        currentPage: 0,
+        pageSize: getProjectCarouselPageSize(),
+        slides: []
+      };
+
+      if (!track || !status || !previousButton || !nextButton) {
+        return;
+      }
+
+      const updateProjectCarousel = () => {
+        const lastPageIndex = Math.max(0, carouselState.slides.length - 1);
+
+        carouselState.currentPage = Math.min(carouselState.currentPage, lastPageIndex);
+        track.style.transform = `translateX(-${carouselState.currentPage * 100}%)`;
+
+        carouselState.slides.forEach((slide, index) => {
+          slide.setAttribute("aria-hidden", String(index !== carouselState.currentPage));
+        });
+
+        status.textContent = `${carouselState.currentPage + 1} / ${Math.max(carouselState.slides.length, 1)}`;
+        previousButton.disabled = carouselState.currentPage === 0;
+        nextButton.disabled = carouselState.currentPage === lastPageIndex;
+      };
+
+      const renderProjectCarousel = () => {
+        const nextPageSize = getProjectCarouselPageSize();
+        const firstVisibleEntryIndex = carouselState.currentPage * carouselState.pageSize;
+
+        carouselState.pageSize = nextPageSize;
+        carouselState.currentPage = Math.floor(firstVisibleEntryIndex / nextPageSize);
+        track.replaceChildren();
+        carouselState.slides = [];
+
+        for (let index = 0; index < entries.length; index += nextPageSize) {
+          const slide = document.createElement("div");
+          const grid = document.createElement("div");
+
+          slide.className = "project-carousel-slide";
+          grid.className = "project-carousel-grid";
+
+          entries.slice(index, index + nextPageSize).forEach((entry) => {
+            grid.appendChild(entry);
+          });
+
+          slide.appendChild(grid);
+          track.appendChild(slide);
+          carouselState.slides.push(slide);
+        }
+
+        updateProjectCarousel();
+      };
+
+      previousButton.addEventListener("click", () => {
+        if (carouselState.currentPage === 0) {
+          return;
+        }
+
+        carouselState.currentPage -= 1;
+        updateProjectCarousel();
+      });
+
+      nextButton.addEventListener("click", () => {
+        if (carouselState.currentPage >= carouselState.slides.length - 1) {
+          return;
+        }
+
+        carouselState.currentPage += 1;
+        updateProjectCarousel();
+      });
+
+      renderProjectCarousel();
+      projectOverflowCarousels.push(renderProjectCarousel);
+    };
+
     const loadDeferredImages = (category) => {
       if (!category) {
         return;
@@ -37,6 +167,24 @@ document.addEventListener("DOMContentLoaded", () => {
         image.removeAttribute("data-src");
       });
     };
+
+    projectCategories.forEach((category) => {
+      initializeProjectOverflowCarousel(category);
+    });
+
+    if (projectOverflowCarousels.length > 0) {
+      let resizeTimer = null;
+
+      window.addEventListener("resize", () => {
+        window.clearTimeout(resizeTimer);
+
+        resizeTimer = window.setTimeout(() => {
+          projectOverflowCarousels.forEach((renderProjectCarousel) => {
+            renderProjectCarousel();
+          });
+        }, 120);
+      });
+    }
 
     const setProjectCategoryState = (activeCategory) => {
       projectCategories.forEach((category) => {
