@@ -235,6 +235,173 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  const lightboxableImages = document.querySelectorAll([
+    ".project-entry:not(.project-entry--course) .project-entry-image",
+    ".detail-gallery-item img",
+    ".detail-hero-visual img"
+  ].join(", "));
+  const lightboxableLinks = document.querySelectorAll(".project-entry--course .project-entry-media-link");
+
+  if (body && (lightboxableImages.length > 0 || lightboxableLinks.length > 0)) {
+    const lightbox = document.createElement("div");
+    lightbox.className = "image-lightbox";
+    lightbox.setAttribute("hidden", "");
+    lightbox.setAttribute("aria-hidden", "true");
+    lightbox.innerHTML = `
+      <div class="image-lightbox-shell" role="dialog" aria-modal="true" aria-label="Image agrandie">
+        <button class="image-lightbox-close" type="button" aria-label="Fermer l'image">&times;</button>
+        <figure class="image-lightbox-figure">
+          <img class="image-lightbox-image" alt="" />
+          <figcaption class="image-lightbox-caption" hidden></figcaption>
+        </figure>
+      </div>
+    `;
+
+    body.appendChild(lightbox);
+
+    const lightboxShell = lightbox.querySelector(".image-lightbox-shell");
+    const lightboxImage = lightbox.querySelector(".image-lightbox-image");
+    const lightboxCaption = lightbox.querySelector(".image-lightbox-caption");
+    const lightboxClose = lightbox.querySelector(".image-lightbox-close");
+    let activeLightboxTrigger = null;
+    let closeLightboxTimer = null;
+
+    const getImageCaption = (image) => {
+      const figureCaption = image.closest("figure")?.querySelector("figcaption")?.textContent?.trim();
+
+      if (figureCaption) {
+        return figureCaption;
+      }
+
+      const entryTitle = image.closest(".project-entry")?.querySelector("h4")?.textContent?.trim();
+
+      if (entryTitle) {
+        return entryTitle;
+      }
+
+      return image.getAttribute("alt")?.trim() || "";
+    };
+
+    const closeImageLightbox = () => {
+      if (!lightbox.classList.contains("is-open")) {
+        return;
+      }
+
+      lightbox.classList.remove("is-open");
+      lightbox.setAttribute("aria-hidden", "true");
+      body.classList.remove("has-lightbox-open");
+      window.clearTimeout(closeLightboxTimer);
+
+      closeLightboxTimer = window.setTimeout(() => {
+        lightbox.setAttribute("hidden", "");
+        lightboxImage.removeAttribute("src");
+
+        if (activeLightboxTrigger) {
+          activeLightboxTrigger.focus();
+          activeLightboxTrigger = null;
+        }
+      }, 220);
+    };
+
+    const openImageLightbox = (image, trigger = image) => {
+      const source = image.currentSrc || image.getAttribute("src") || image.dataset.src;
+
+      if (!source) {
+        return;
+      }
+
+      const caption = getImageCaption(image);
+
+      activeLightboxTrigger = trigger;
+      window.clearTimeout(closeLightboxTimer);
+      lightboxImage.src = source;
+      lightboxImage.alt = image.getAttribute("alt") || "";
+
+      if (caption) {
+        lightboxCaption.textContent = caption;
+        lightboxCaption.hidden = false;
+      } else {
+        lightboxCaption.textContent = "";
+        lightboxCaption.hidden = true;
+      }
+
+      lightbox.removeAttribute("hidden");
+      lightbox.setAttribute("aria-hidden", "false");
+      body.classList.add("has-lightbox-open");
+
+      window.requestAnimationFrame(() => {
+        lightbox.classList.add("is-open");
+        lightboxClose?.focus();
+      });
+    };
+
+    lightboxableImages.forEach((image) => {
+      const label = getImageCaption(image) || "Image du projet";
+
+      image.classList.add("lightboxable-image");
+      image.setAttribute("tabindex", "0");
+      image.setAttribute("role", "button");
+      image.setAttribute("aria-haspopup", "dialog");
+      image.setAttribute("aria-label", `Ouvrir l'image en grand : ${label}`);
+
+      image.addEventListener("click", () => {
+        openImageLightbox(image);
+      });
+
+      image.addEventListener("keydown", (event) => {
+        if (event.key !== "Enter" && event.key !== " ") {
+          return;
+        }
+
+        event.preventDefault();
+        openImageLightbox(image);
+      });
+    });
+
+    lightboxableLinks.forEach((link) => {
+      const image = link.querySelector("img");
+      const label = image ? getImageCaption(image) || "Image du projet" : "Image du projet";
+
+      link.classList.add("lightboxable-link");
+      link.setAttribute("aria-haspopup", "dialog");
+      link.setAttribute("aria-label", `Ouvrir l'image en grand : ${label}`);
+
+      link.addEventListener("click", (event) => {
+        if (!image || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+          return;
+        }
+
+        event.preventDefault();
+        openImageLightbox(image, link);
+      });
+
+      link.addEventListener("keydown", (event) => {
+        if (!image || (event.key !== "Enter" && event.key !== " ")) {
+          return;
+        }
+
+        event.preventDefault();
+        openImageLightbox(image, link);
+      });
+    });
+
+    lightboxClose?.addEventListener("click", closeImageLightbox);
+
+    lightbox.addEventListener("click", (event) => {
+      if (!lightboxShell || lightboxShell.contains(event.target)) {
+        return;
+      }
+
+      closeImageLightbox();
+    });
+
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeImageLightbox();
+      }
+    });
+  }
+
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const finePointer = window.matchMedia("(pointer: fine)");
 

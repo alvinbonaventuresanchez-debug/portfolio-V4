@@ -1,0 +1,397 @@
+﻿{
+    "GeneratedAt":  "2026-04-24T21:11:37",
+    "MaxLongEdge":  1800,
+    "Rows":  [
+                 {
+                     "Path":  "assets\\images\\projects\\Affiches, compositions et recherches visuelles\\affiche festival.png",
+                     "OutputPath":  "assets\\images\\projects\\Affiches, compositions et recherches visuelles\\affiche festival.jpg",
+                     "Action":  "converted",
+                     "OriginalBytes":  25380038,
+                     "FinalBytes":  199077,
+                     "OriginalWidth":  5400,
+                     "OriginalHeight":  7200,
+                     "FinalWidth":  1350,
+                     "FinalHeight":  1800
+                 },
+                 {
+                     "Path":  "assets\\images\\projects\\Affiches, compositions et recherches visuelles\\IMG_0546.jpg",
+                     "OutputPath":  "assets\\images\\projects\\Affiches, compositions et recherches visuelles\\IMG_0546.jpg",
+                     "Action":  "optimized",
+                     "OriginalBytes":  25370229,
+                     "FinalBytes":  336799,
+                     "OriginalWidth":  6000,
+                     "OriginalHeight":  4000,
+                     "FinalWidth":  1800,
+                     "FinalHeight":  1200
+                 },
+                 {
+                     "Path":  "assets\\images\\projects\\Affiches, compositions et recherches visuelles\\IMG_0561.jpg",
+                     "OutputPath":  "assets\\images\\projects\\Affiches, compositions et recherches visuelles\\IMG_0561.jpg",
+                     "Action":  "optimized",
+                     "OriginalBytes":  25793124,
+                     "FinalBytes":  233939,
+                     "OriginalWidth":  4000,
+                     "OriginalHeight":  6000,
+                     "FinalWidth":  1200,
+                     "FinalHeight":  1800
+                 },
+                 {
+                     "Path":  "assets\\images\\projects\\Affiches, compositions et recherches visuelles\\IMG_0574.jpg",
+                     "OutputPath":  "assets\\images\\projects\\Affiches, compositions et recherches visuelles\\IMG_0574.jpg",
+                     "Action":  "optimized",
+                     "OriginalBytes":  11713309,
+                     "FinalBytes":  199872,
+                     "OriginalWidth":  3409,
+                     "OriginalHeight":  3937,
+                     "FinalWidth":  1559,
+                     "FinalHeight":  1800
+                 },
+                 {
+                     "Path":  "assets\\images\\projects\\Affiches, compositions et recherches visuelles\\JAPAN.png",
+                     "OutputPath":  "assets\\images\\projects\\Affiches, compositions et recherches visuelles\\JAPAN.jpg",
+                     "Action":  "converted",
+                     "OriginalBytes":  50631798,
+                     "FinalBytes":  485897,
+                     "OriginalWidth":  5400,
+                     "OriginalHeight":  7200,
+                     "FinalWidth":  1350,
+                     "FinalHeight":  1800
+                 },
+                 {
+                     "Path":  "assets\\images\\projects\\Affiches, compositions et recherches visuelles\\Koichi sato 1.png",
+                     "OutputPath":  "assets\\images\\projects\\Affiches, compositions et recherches visuelles\\Koichi sato 1.jpg",
+                     "Action":  "converted",
+                     "OriginalBytes":  63199191,
+                     "FinalBytes":  485711,
+                     "OriginalWidth":  5400,
+                     "OriginalHeight":  7200,
+                     "FinalWidth":  1350,
+                     "FinalHeight":  1800
+                 },
+                 {
+                     "Path":  "assets\\images\\projects\\Affiches, compositions et recherches visuelles\\lostwoman.png",
+                     "OutputPath":  "assets\\images\\projects\\Affiches, compositions et recherches visuelles\\lostwoman.jpg",
+                     "Action":  "converted",
+                     "OriginalBytes":  1967674,
+                     "FinalBytes":  266861,
+                     "OriginalWidth":  1080,
+                     "OriginalHeight":  1350,
+                     "FinalWidth":  1080,
+                     "FinalHeight":  1350
+                 },
+                 {
+                     "Path":  "assets\\images\\projects\\Affiches, compositions et recherches visuelles\\MAN FLI.png",
+                     "OutputPath":  "assets\\images\\projects\\Affiches, compositions et recherches visuelles\\MAN FLI.jpg",
+                     "Action":  "converted",
+                     "OriginalBytes":  100689828,
+                     "FinalBytes":  690228,
+                     "OriginalWidth":  5400,
+                     "OriginalHeight":  7200,
+                     "FinalWidth":  1350,
+                     "FinalHeight":  1800
+                 },
+                 {
+                     "Path":  "assets\\images\\projects\\Affiches, compositions et recherches visuelles\\Nénuphar.png",
+                     "OutputPath":  "assets\\images\\projects\\Affiches, compositions et recherches visuelles\\Nénuphar.jpg",
+                     "Action":  "converted",
+                     "OriginalBytes":  1869343,
+                     "FinalBytes":  311113,
+                     "OriginalWidth":  1080,
+                     "OriginalHeight":  1350,
+                     "FinalWidth":  1080,
+                     "FinalHeight":  1350
+                 },
+                 {
+                     "Path":  "assets\\images\\projects\\Affiches, compositions et recherches visuelles\\spider.png",
+                     "OutputPath":  "assets\\images\\projects\\Affiches, compositions et recherches visuelles\\spider.jpg",
+                     "Action":  "converted",
+                     "OriginalBytes":  36515472,
+                     "FinalBytes":  888831,
+                     "OriginalWidth":  5400,
+                     "OriginalHeight":  7200,
+                     "FinalWidth":  1350,
+                     "FinalHeight":  1800
+                 },
+                 {
+                     "Path":  "assets\\images\\projects\\Affiches, compositions et recherches visuelles\\tournsol.png",
+                     "OutputPath":  "assets\\images\\projects\\Affiches, compositions et recherches visuelles\\tournsol.jpg",
+                     "Action":  "converted",
+                     "OriginalBytes":  2763670,
+                     "FinalBytes":  591092,
+                     "OriginalWidth":  1024,
+                     "OriginalHeight":  1152,
+                     "FinalWidth":  1024,
+                     "FinalHeight":  1152
+                 },
+                 {
+                     "Path":  "assets\\images\\projects\\Affiches, compositions et recherches visuelles\\who is this star.png",
+                     "OutputPath":  "assets\\images\\projects\\Affiches, compositions et recherches visuelles\\who is this star.jpg",
+                     "Action":  "converted",
+                     "OriginalBytes":  452503,
+                     "FinalBytes":  84015,
+                     "OriginalWidth":  5400,
+                     "OriginalHeight":  7200,
+                     "FinalWidth":  1350,
+                     "FinalHeight":  1800
+                 },
+                 {
+                     "Path":  "assets\\images\\projects\\Des formats pour transmettre, expliquer et accompagner\\Projet photo tatoo\\aymeric 11.jpg",
+                     "OutputPath":  "assets\\images\\projects\\Des formats pour transmettre, expliquer et accompagner\\Projet photo tatoo\\aymeric 11.jpg",
+                     "Action":  "optimized",
+                     "OriginalBytes":  5017120,
+                     "FinalBytes":  90835,
+                     "OriginalWidth":  4000,
+                     "OriginalHeight":  6000,
+                     "FinalWidth":  1200,
+                     "FinalHeight":  1800
+                 },
+                 {
+                     "Path":  "assets\\images\\projects\\Des formats pour transmettre, expliquer et accompagner\\Projet photo tatoo\\aymeric 3.jpg",
+                     "OutputPath":  "assets\\images\\projects\\Des formats pour transmettre, expliquer et accompagner\\Projet photo tatoo\\aymeric 3.jpg",
+                     "Action":  "optimized",
+                     "OriginalBytes":  12753205,
+                     "FinalBytes":  141993,
+                     "OriginalWidth":  6000,
+                     "OriginalHeight":  4000,
+                     "FinalWidth":  1800,
+                     "FinalHeight":  1200
+                 },
+                 {
+                     "Path":  "assets\\images\\projects\\Des formats pour transmettre, expliquer et accompagner\\Projet photo tatoo\\aymeric 4.jpg",
+                     "OutputPath":  "assets\\images\\projects\\Des formats pour transmettre, expliquer et accompagner\\Projet photo tatoo\\aymeric 4.jpg",
+                     "Action":  "optimized",
+                     "OriginalBytes":  25474261,
+                     "FinalBytes":  284177,
+                     "OriginalWidth":  6000,
+                     "OriginalHeight":  4000,
+                     "FinalWidth":  1800,
+                     "FinalHeight":  1200
+                 },
+                 {
+                     "Path":  "assets\\images\\projects\\Des formats pour transmettre, expliquer et accompagner\\Projet photo tatoo\\aymeric 5.jpg",
+                     "OutputPath":  "assets\\images\\projects\\Des formats pour transmettre, expliquer et accompagner\\Projet photo tatoo\\aymeric 5.jpg",
+                     "Action":  "optimized",
+                     "OriginalBytes":  14072543,
+                     "FinalBytes":  181208,
+                     "OriginalWidth":  4000,
+                     "OriginalHeight":  6000,
+                     "FinalWidth":  1200,
+                     "FinalHeight":  1800
+                 },
+                 {
+                     "Path":  "assets\\images\\projects\\Des formats pour transmettre, expliquer et accompagner\\Projet photo tatoo\\Barbara 1.jpg",
+                     "OutputPath":  "assets\\images\\projects\\Des formats pour transmettre, expliquer et accompagner\\Projet photo tatoo\\Barbara 1.jpg",
+                     "Action":  "optimized",
+                     "OriginalBytes":  7508190,
+                     "FinalBytes":  268895,
+                     "OriginalWidth":  4322,
+                     "OriginalHeight":  3250,
+                     "FinalWidth":  1800,
+                     "FinalHeight":  1354
+                 },
+                 {
+                     "Path":  "assets\\images\\projects\\Des formats pour transmettre, expliquer et accompagner\\Projet photo tatoo\\Barbara 2.jpg",
+                     "OutputPath":  "assets\\images\\projects\\Des formats pour transmettre, expliquer et accompagner\\Projet photo tatoo\\Barbara 2.jpg",
+                     "Action":  "optimized",
+                     "OriginalBytes":  13205293,
+                     "FinalBytes":  231317,
+                     "OriginalWidth":  6000,
+                     "OriginalHeight":  4000,
+                     "FinalWidth":  1800,
+                     "FinalHeight":  1200
+                 },
+                 {
+                     "Path":  "assets\\images\\projects\\Des formats pour transmettre, expliquer et accompagner\\Projet photo tatoo\\Barbara 3.jpg",
+                     "OutputPath":  "assets\\images\\projects\\Des formats pour transmettre, expliquer et accompagner\\Projet photo tatoo\\Barbara 3.jpg",
+                     "Action":  "optimized",
+                     "OriginalBytes":  4821623,
+                     "FinalBytes":  254281,
+                     "OriginalWidth":  2292,
+                     "OriginalHeight":  3713,
+                     "FinalWidth":  1111,
+                     "FinalHeight":  1800
+                 },
+                 {
+                     "Path":  "assets\\images\\projects\\Portraits, détails et ambiances capturées\\IMG_0313.jpg",
+                     "OutputPath":  "assets\\images\\projects\\Portraits, détails et ambiances capturées\\IMG_0313.jpg",
+                     "Action":  "optimized",
+                     "OriginalBytes":  22930282,
+                     "FinalBytes":  236974,
+                     "OriginalWidth":  4000,
+                     "OriginalHeight":  6000,
+                     "FinalWidth":  1200,
+                     "FinalHeight":  1800
+                 },
+                 {
+                     "Path":  "assets\\images\\projects\\Portraits, détails et ambiances capturées\\IMG_0363.jpg",
+                     "OutputPath":  "assets\\images\\projects\\Portraits, détails et ambiances capturées\\IMG_0363.jpg",
+                     "Action":  "optimized",
+                     "OriginalBytes":  8700850,
+                     "FinalBytes":  298125,
+                     "OriginalWidth":  4000,
+                     "OriginalHeight":  6000,
+                     "FinalWidth":  1200,
+                     "FinalHeight":  1800
+                 },
+                 {
+                     "Path":  "assets\\images\\projects\\Portraits, détails et ambiances capturées\\IMG_0379.jpg",
+                     "OutputPath":  "assets\\images\\projects\\Portraits, détails et ambiances capturées\\IMG_0379.jpg",
+                     "Action":  "optimized",
+                     "OriginalBytes":  16901208,
+                     "FinalBytes":  231727,
+                     "OriginalWidth":  4000,
+                     "OriginalHeight":  6000,
+                     "FinalWidth":  1200,
+                     "FinalHeight":  1800
+                 },
+                 {
+                     "Path":  "assets\\images\\projects\\Portraits, détails et ambiances capturées\\IMG_0517.jpg",
+                     "OutputPath":  "assets\\images\\projects\\Portraits, détails et ambiances capturées\\IMG_0517.jpg",
+                     "Action":  "optimized",
+                     "OriginalBytes":  12289321,
+                     "FinalBytes":  280702,
+                     "OriginalWidth":  4000,
+                     "OriginalHeight":  6000,
+                     "FinalWidth":  1200,
+                     "FinalHeight":  1800
+                 },
+                 {
+                     "Path":  "assets\\images\\projects\\Portraits, détails et ambiances capturées\\IMG_0607.jpg",
+                     "OutputPath":  "assets\\images\\projects\\Portraits, détails et ambiances capturées\\IMG_0607.jpg",
+                     "Action":  "optimized",
+                     "OriginalBytes":  1524883,
+                     "FinalBytes":  269079,
+                     "OriginalWidth":  4000,
+                     "OriginalHeight":  6000,
+                     "FinalWidth":  1200,
+                     "FinalHeight":  1800
+                 },
+                 {
+                     "Path":  "assets\\images\\projects\\Portraits, détails et ambiances capturées\\IMG_20260417_152035.jpg",
+                     "OutputPath":  "assets\\images\\projects\\Portraits, détails et ambiances capturées\\IMG_20260417_152035.jpg",
+                     "Action":  "optimized",
+                     "OriginalBytes":  2486780,
+                     "FinalBytes":  197188,
+                     "OriginalWidth":  2916,
+                     "OriginalHeight":  4804,
+                     "FinalWidth":  1093,
+                     "FinalHeight":  1800
+                 },
+                 {
+                     "Path":  "assets\\images\\projects\\Portraits, détails et ambiances capturées\\IMG_20260419_172837 (1).jpg",
+                     "OutputPath":  "assets\\images\\projects\\Portraits, détails et ambiances capturées\\IMG_20260419_172837 (1).jpg",
+                     "Action":  "optimized",
+                     "OriginalBytes":  9648600,
+                     "FinalBytes":  395435,
+                     "OriginalWidth":  2916,
+                     "OriginalHeight":  5090,
+                     "FinalWidth":  1031,
+                     "FinalHeight":  1800
+                 },
+                 {
+                     "Path":  "assets\\images\\projects\\Portraits, détails et ambiances capturées\\IMG_20260423_080746.jpg",
+                     "OutputPath":  "assets\\images\\projects\\Portraits, détails et ambiances capturées\\IMG_20260423_080746.jpg",
+                     "Action":  "optimized",
+                     "OriginalBytes":  2505858,
+                     "FinalBytes":  421872,
+                     "OriginalWidth":  1272,
+                     "OriginalHeight":  2255,
+                     "FinalWidth":  1015,
+                     "FinalHeight":  1800
+                 },
+                 {
+                     "Path":  "assets\\images\\projects\\Portraits, détails et ambiances capturées\\IMG_5250.jpg",
+                     "OutputPath":  "assets\\images\\projects\\Portraits, détails et ambiances capturées\\IMG_5250.jpg",
+                     "Action":  "optimized",
+                     "OriginalBytes":  18273568,
+                     "FinalBytes":  229874,
+                     "OriginalWidth":  4000,
+                     "OriginalHeight":  6000,
+                     "FinalWidth":  1200,
+                     "FinalHeight":  1800
+                 },
+                 {
+                     "Path":  "assets\\images\\projects\\Portraits, détails et ambiances capturées\\Plan de travail 1.png",
+                     "OutputPath":  "assets\\images\\projects\\Portraits, détails et ambiances capturées\\Plan de travail 1.jpg",
+                     "Action":  "converted",
+                     "OriginalBytes":  1752817,
+                     "FinalBytes":  259878,
+                     "OriginalWidth":  1080,
+                     "OriginalHeight":  1350,
+                     "FinalWidth":  1080,
+                     "FinalHeight":  1350
+                 },
+                 {
+                     "Path":  "assets\\images\\projects\\Portraits, détails et ambiances capturées\\Plan de travail 2.png",
+                     "OutputPath":  "assets\\images\\projects\\Portraits, détails et ambiances capturées\\Plan de travail 2.jpg",
+                     "Action":  "converted",
+                     "OriginalBytes":  1433264,
+                     "FinalBytes":  390305,
+                     "OriginalWidth":  1080,
+                     "OriginalHeight":  1350,
+                     "FinalWidth":  1080,
+                     "FinalHeight":  1350
+                 },
+                 {
+                     "Path":  "assets\\images\\projects\\Portraits, détails et ambiances capturées\\Plan de travail 6.png",
+                     "OutputPath":  "assets\\images\\projects\\Portraits, détails et ambiances capturées\\Plan de travail 6.jpg",
+                     "Action":  "converted",
+                     "OriginalBytes":  1531537,
+                     "FinalBytes":  255948,
+                     "OriginalWidth":  1080,
+                     "OriginalHeight":  1350,
+                     "FinalWidth":  1080,
+                     "FinalHeight":  1350
+                 }
+             ],
+    "PathMappings":  [
+                         {
+                             "From":  "assets/images/projects/Affiches, compositions et recherches visuelles/affiche festival.png",
+                             "To":  "assets/images/projects/Affiches, compositions et recherches visuelles/affiche festival.jpg"
+                         },
+                         {
+                             "From":  "assets/images/projects/Affiches, compositions et recherches visuelles/JAPAN.png",
+                             "To":  "assets/images/projects/Affiches, compositions et recherches visuelles/JAPAN.jpg"
+                         },
+                         {
+                             "From":  "assets/images/projects/Affiches, compositions et recherches visuelles/Koichi sato 1.png",
+                             "To":  "assets/images/projects/Affiches, compositions et recherches visuelles/Koichi sato 1.jpg"
+                         },
+                         {
+                             "From":  "assets/images/projects/Affiches, compositions et recherches visuelles/lostwoman.png",
+                             "To":  "assets/images/projects/Affiches, compositions et recherches visuelles/lostwoman.jpg"
+                         },
+                         {
+                             "From":  "assets/images/projects/Affiches, compositions et recherches visuelles/MAN FLI.png",
+                             "To":  "assets/images/projects/Affiches, compositions et recherches visuelles/MAN FLI.jpg"
+                         },
+                         {
+                             "From":  "assets/images/projects/Affiches, compositions et recherches visuelles/Nénuphar.png",
+                             "To":  "assets/images/projects/Affiches, compositions et recherches visuelles/Nénuphar.jpg"
+                         },
+                         {
+                             "From":  "assets/images/projects/Affiches, compositions et recherches visuelles/spider.png",
+                             "To":  "assets/images/projects/Affiches, compositions et recherches visuelles/spider.jpg"
+                         },
+                         {
+                             "From":  "assets/images/projects/Affiches, compositions et recherches visuelles/tournsol.png",
+                             "To":  "assets/images/projects/Affiches, compositions et recherches visuelles/tournsol.jpg"
+                         },
+                         {
+                             "From":  "assets/images/projects/Affiches, compositions et recherches visuelles/who is this star.png",
+                             "To":  "assets/images/projects/Affiches, compositions et recherches visuelles/who is this star.jpg"
+                         },
+                         {
+                             "From":  "assets/images/projects/Portraits, détails et ambiances capturées/Plan de travail 1.png",
+                             "To":  "assets/images/projects/Portraits, détails et ambiances capturées/Plan de travail 1.jpg"
+                         },
+                         {
+                             "From":  "assets/images/projects/Portraits, détails et ambiances capturées/Plan de travail 2.png",
+                             "To":  "assets/images/projects/Portraits, détails et ambiances capturées/Plan de travail 2.jpg"
+                         },
+                         {
+                             "From":  "assets/images/projects/Portraits, détails et ambiances capturées/Plan de travail 6.png",
+                             "To":  "assets/images/projects/Portraits, détails et ambiances capturées/Plan de travail 6.jpg"
+                         }
+                     ]
+}
