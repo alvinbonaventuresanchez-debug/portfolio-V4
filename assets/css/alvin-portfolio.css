@@ -317,8 +317,9 @@ h2.section-title em {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(0.9rem, 1.4vw, 1.2rem);
+  align-items: start;
 }
 
 .project-card {
@@ -338,12 +339,12 @@ h2.section-title em {
 }
 
 .project-card.large {
-  grid-column: span 2;
+  grid-column: span 1;
 }
 
 .project-img {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
   display: block;
   filter: brightness(0.9);
@@ -356,19 +357,19 @@ h2.section-title em {
 }
 
 .project-info {
-  padding: 1.2rem 1.3rem 1.4rem;
+  padding: 1rem 1.1rem 1.2rem;
 }
 
 .project-info h3 {
   font-family: var(--serif);
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 700;
   margin-bottom: 0.3rem;
   letter-spacing: -0.01em;
 }
 
 .project-info p {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--muted);
   font-weight: 300;
   line-height: 1.5;
@@ -615,6 +616,22 @@ footer a:hover {
   border-radius: 4px;
 }
 
+@media (min-width: 1400px) {
+  .projects-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .project-card.large {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 1200px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 900px) {
   nav {
     padding: 1.2rem 1.5rem;
@@ -634,7 +651,7 @@ footer a:hover {
   }
 
   .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .project-card.large {
@@ -658,5 +675,17 @@ footer a:hover {
 
   .hero-number {
     font-size: 40vw;
+  }
+}
+
+@media (max-width: 620px) {
+  .projects-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
   }
 }
