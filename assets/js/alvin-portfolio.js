@@ -402,6 +402,73 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  const projectSectionNavLinks = document.querySelectorAll('.project-page-topbar a[href^="#"]');
+
+  if (body?.classList.contains("project-detail-page") && projectSectionNavLinks.length > 0) {
+    const projectSections = Array.from(projectSectionNavLinks)
+      .map((link) => {
+        const targetId = link.getAttribute("href");
+
+        if (!targetId) {
+          return null;
+        }
+
+        const section = document.querySelector(targetId);
+
+        if (!section) {
+          return null;
+        }
+
+        return { link, section };
+      })
+      .filter(Boolean);
+
+    const updateActiveProjectSectionLink = () => {
+      const scrollReference = window.scrollY + 180;
+      let activeLink = null;
+
+      projectSections.forEach((entry) => {
+        if (scrollReference >= entry.section.offsetTop) {
+          activeLink = entry.link;
+        }
+      });
+
+      projectSections.forEach((entry) => {
+        const isActive = entry.link === activeLink;
+
+        if (isActive) {
+          entry.link.setAttribute("aria-current", "true");
+        } else {
+          entry.link.removeAttribute("aria-current");
+        }
+      });
+    };
+
+    updateActiveProjectSectionLink();
+    window.addEventListener("scroll", updateActiveProjectSectionLink, { passive: true });
+    window.addEventListener("resize", updateActiveProjectSectionLink);
+  }
+
+  const immersiveGalleries = document.querySelectorAll(".project-detail-page .detail-gallery");
+
+  immersiveGalleries.forEach((gallery) => {
+    gallery.addEventListener("wheel", (event) => {
+      if (gallery.scrollWidth <= gallery.clientWidth || event.ctrlKey) {
+        return;
+      }
+
+      if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) {
+        return;
+      }
+
+      event.preventDefault();
+      gallery.scrollBy({
+        left: event.deltaY * 1.05,
+        behavior: "smooth"
+      });
+    }, { passive: false });
+  });
+
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const finePointer = window.matchMedia("(pointer: fine)");
 
