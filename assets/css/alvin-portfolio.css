@@ -653,6 +653,38 @@ h2.section-title em {
   transition: transform 0.35s ease, filter 0.35s ease;
 }
 
+.project-entry--placeholder {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(124, 92, 252, 0.08) 100%);
+}
+
+.project-entry-placeholder {
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(167, 139, 250, 0.24) 0%, transparent 54%),
+    linear-gradient(135deg, rgba(124, 92, 252, 0.2) 0%, rgba(18, 18, 31, 0.9) 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.project-entry-placeholder span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(167, 139, 250, 0.28);
+  background: rgba(8, 8, 16, 0.7);
+  color: var(--text);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
 .lightboxable-image {
   cursor: zoom-in;
 }
