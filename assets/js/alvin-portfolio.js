@@ -213,12 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     };
 
-    let initialOpenCategory = document.querySelector(".project-category.is-open");
-
-    if (!initialOpenCategory) {
-      initialOpenCategory = projectCategories[0];
-    }
-
+    const initialOpenCategory = document.querySelector(".project-category.is-open");
     setProjectCategoryState(initialOpenCategory);
 
     projectCategories.forEach((category) => {
