@@ -2,6 +2,37 @@ document.addEventListener("DOMContentLoaded", () => {
   const body = document.body;
   const reveals = document.querySelectorAll(".reveal");
   const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const siteIntro = document.querySelector(".site-intro");
+  const shouldRunSiteIntro = body?.classList.contains("home-page")
+    && siteIntro
+    && document.documentElement.classList.contains("has-site-intro")
+    && !prefersReducedMotion.matches;
+
+  if (shouldRunSiteIntro) {
+    let introClosed = false;
+
+    siteIntro.setAttribute("aria-hidden", "false");
+
+    const closeSiteIntro = () => {
+      if (introClosed) {
+        return;
+      }
+
+      introClosed = true;
+      document.documentElement.classList.remove("has-site-intro");
+
+      window.setTimeout(() => {
+        siteIntro.setAttribute("hidden", "");
+        siteIntro.setAttribute("aria-hidden", "true");
+      }, 420);
+    };
+
+    window.setTimeout(closeSiteIntro, 1220);
+  } else if (siteIntro) {
+    document.documentElement.classList.remove("has-site-intro");
+    siteIntro.setAttribute("hidden", "");
+  }
 
   lazyImages.forEach((image) => {
     image.decoding = "async";
@@ -464,7 +495,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { passive: false });
   });
 
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const finePointer = window.matchMedia("(pointer: fine)");
 
   if (body && !prefersReducedMotion.matches && finePointer.matches) {

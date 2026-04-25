@@ -4,12 +4,38 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alvin Bonaventure-Sanchez &mdash; Portfolio</title>
+  <script>
+    (function () {
+      try {
+        var shouldShowIntro = !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+          && !window.sessionStorage.getItem("alvin-home-intro-seen");
+
+        if (shouldShowIntro) {
+          document.documentElement.classList.add("has-site-intro");
+          window.sessionStorage.setItem("alvin-home-intro-seen", "true");
+        }
+      } catch (error) {
+        document.documentElement.classList.add("has-site-intro");
+      }
+    }());
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/alvin-portfolio.css" />
 </head>
-<body>
+<body class="home-page">
+  <div class="site-intro" aria-hidden="true">
+    <div class="site-intro-mark">
+      <svg class="site-intro-svg" viewBox="0 0 320 400" aria-hidden="true" focusable="false">
+        <text class="site-intro-a-base" x="50%" y="78%" text-anchor="middle">A</text>
+        <text class="site-intro-a-fill" x="50%" y="78%" text-anchor="middle">A</text>
+        <text class="site-intro-a-trace" x="50%" y="78%" text-anchor="middle">A</text>
+        <text class="site-intro-a-point" x="50%" y="78%" text-anchor="middle">A</text>
+      </svg>
+    </div>
+  </div>
+
   <nav>
     <a href="#hero" class="nav-logo">Alvin <span>B.S.</span></a>
     <ul>

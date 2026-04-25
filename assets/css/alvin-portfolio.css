@@ -48,6 +48,19 @@ body.has-lightbox-open {
   overflow: hidden;
 }
 
+body.home-page > :not(.site-intro):not(script) {
+  transition: opacity 0.42s ease;
+}
+
+html.has-site-intro body.home-page {
+  overflow: hidden;
+}
+
+html.has-site-intro body.home-page > :not(.site-intro):not(script) {
+  opacity: 0;
+  pointer-events: none;
+}
+
 body::before {
   content: "";
   position: fixed;
@@ -77,6 +90,146 @@ body::after {
   transition: opacity 0.35s ease;
   mix-blend-mode: screen;
   will-change: background, opacity;
+}
+
+.site-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 10050;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  background:
+    radial-gradient(ellipse 60% 60% at 80% 30%, rgba(124, 92, 252, 0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 20% 70%, rgba(167, 139, 250, 0.08) 0%, transparent 60%),
+    var(--bg);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  overflow: hidden;
+  transition: opacity 0.42s ease, visibility 0s linear 0.42s;
+}
+
+.site-intro::before,
+.site-intro::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.site-intro::before {
+  background-image: url("../images/textures/grain.svg");
+  opacity: 0.04;
+}
+
+.site-intro::after {
+  background:
+    radial-gradient(circle at center,
+      rgba(167, 139, 250, 0.12) 0%,
+      rgba(124, 92, 252, 0.08) 22%,
+      transparent 58%);
+}
+
+html.has-site-intro .site-intro {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition-delay: 0s;
+}
+
+.site-intro-mark {
+  position: relative;
+  min-width: min(42vw, 28rem);
+  min-height: min(54vw, 32rem);
+  padding: 1.5rem;
+  isolation: isolate;
+}
+
+.site-intro-mark::before {
+  content: "";
+  position: absolute;
+  inset: 20% 22%;
+  background: radial-gradient(circle, rgba(167, 139, 250, 0.2) 0%, rgba(124, 92, 252, 0.08) 38%, transparent 72%);
+  filter: blur(26px);
+  opacity: 0.5;
+  transform: scale(0.82);
+}
+
+.site-intro-svg {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.site-intro-a-base,
+.site-intro-a-fill,
+.site-intro-a-trace,
+.site-intro-a-point {
+  font-family: var(--serif);
+  font-size: 320px;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: -0.08em;
+  dominant-baseline: alphabetic;
+  text-rendering: geometricPrecision;
+}
+
+.site-intro-a-base {
+  fill: #2f2356;
+  opacity: 0.98;
+  filter: drop-shadow(0 0 24px rgba(124, 92, 252, 0.16));
+}
+
+.site-intro-a-fill {
+  fill: #ffffff;
+  opacity: 0;
+  filter:
+    drop-shadow(0 0 18px rgba(255, 255, 255, 0.62))
+    drop-shadow(0 0 30px rgba(167, 139, 250, 0.28));
+}
+
+.site-intro-a-trace {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.95);
+  stroke-width: 3.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 2200;
+  stroke-dashoffset: 2200;
+  opacity: 1;
+  filter:
+    drop-shadow(0 0 20px rgba(255, 255, 255, 0.76))
+    drop-shadow(0 0 34px rgba(167, 139, 250, 0.42));
+}
+
+.site-intro-a-point {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 5.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1 2200;
+  stroke-dashoffset: 2200;
+  opacity: 0;
+  filter:
+    drop-shadow(0 0 12px rgba(255, 255, 255, 0.95))
+    drop-shadow(0 0 26px rgba(167, 139, 250, 0.62));
+}
+
+html.has-site-intro .site-intro-a-fill {
+  animation: introFill 1.2s linear forwards;
+}
+
+html.has-site-intro .site-intro-a-trace {
+  animation: introTrace 1.2s linear forwards;
+}
+
+html.has-site-intro .site-intro-a-point {
+  animation: introPoint 1.2s linear forwards;
 }
 
 section,
@@ -1981,6 +2134,57 @@ footer a:hover {
   }
 }
 
+@keyframes introFill {
+  0% {
+    opacity: 0;
+  }
+
+  16% {
+    opacity: 0.08;
+  }
+
+  58% {
+    opacity: 0.44;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes introTrace {
+  0% {
+    opacity: 1;
+    stroke-dashoffset: 2200;
+  }
+
+  100% {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes introPoint {
+  0% {
+    opacity: 0;
+    stroke-dashoffset: 2200;
+  }
+
+  8% {
+    opacity: 1;
+  }
+
+  92% {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    opacity: 0;
+    stroke-dashoffset: 0;
+  }
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(28px);
@@ -2086,6 +2290,11 @@ footer a:hover {
 }
 
 @media (max-width: 900px) {
+  .site-intro-mark {
+    min-width: min(58vw, 24rem);
+    min-height: min(70vw, 28rem);
+  }
+
   html {
     scroll-padding-top: 7.5rem;
   }
@@ -2468,6 +2677,22 @@ footer a:hover {
 }
 
 @media (max-width: 620px) {
+  .site-intro {
+    padding: 1.5rem;
+  }
+
+  .site-intro-mark {
+    min-width: min(70vw, 18rem);
+    min-height: min(88vw, 22rem);
+  }
+
+  .site-intro-a-base,
+  .site-intro-a-fill,
+  .site-intro-a-trace,
+  .site-intro-a-point {
+    font-size: 240px;
+  }
+
   nav {
     padding: 0.9rem 0.9rem 0.95rem;
   }
