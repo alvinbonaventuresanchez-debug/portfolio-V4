@@ -122,6 +122,11 @@ nav ul {
   flex-wrap: wrap;
   gap: 2.5rem;
   justify-content: flex-end;
+  min-width: 0;
+}
+
+nav ul li {
+  flex: 0 0 auto;
 }
 
 nav ul a {
@@ -258,6 +263,10 @@ h1.hero-title em {
 
 section {
   padding: 7rem 3rem;
+}
+
+section[id] {
+  scroll-margin-top: 7rem;
 }
 
 .section-label {
@@ -2045,8 +2054,13 @@ footer a:hover {
 }
 
 @media (max-width: 900px) {
+  html {
+    scroll-padding-top: 7.5rem;
+  }
+
   nav {
-    padding: 1.2rem 1.5rem;
+    padding: 1rem 1.35rem;
+    gap: 0.9rem;
   }
 
   section {
@@ -2054,12 +2068,14 @@ footer a:hover {
   }
 
   #hero {
-    padding: 0 1.5rem 4rem;
+    min-height: 100svh;
+    justify-content: center;
+    padding: 8.2rem 1.5rem 3.8rem;
   }
 
   #about {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 2.2rem;
   }
 
   .project-category-toggle {
@@ -2104,15 +2120,60 @@ footer a:hover {
   }
 
   .project-detail-page nav ul {
-    gap: 0.55rem;
+    gap: 0.6rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 0.15rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 
   .project-detail-page nav ul a {
     padding: 0.5rem 0.75rem;
+    white-space: nowrap;
   }
 
   .project-detail-page .detail-process-sidebar {
     position: static;
+  }
+
+  .project-detail-page nav ul::-webkit-scrollbar {
+    display: none;
+  }
+
+  .detail-shell--case-study {
+    gap: 1rem;
+  }
+
+  .detail-hero--case-study,
+  .project-detail-page .detail-section {
+    border-radius: 1.45rem;
+  }
+
+  .detail-section-heading {
+    margin-bottom: 1.65rem;
+  }
+
+  .detail-process-layout,
+  .detail-process-sidebar,
+  .detail-decision-grid,
+  .detail-summary--results,
+  .detail-summary--analysis {
+    gap: 0.9rem;
+  }
+
+  .project-detail-page .detail-gallery {
+    scroll-padding-left: 0.25rem;
+    overscroll-behavior-x: contain;
+  }
+
+  .project-detail-page .detail-gallery-item {
+    flex-basis: min(74vw, 420px);
+  }
+
+  .project-detail-page .detail-gallery-item--featured {
+    flex-basis: min(82vw, 560px);
   }
 
   .skills-feature,
@@ -2146,17 +2207,40 @@ footer a:hover {
 }
 
 @media (max-width: 760px) {
+  html {
+    scroll-padding-top: 8.4rem;
+  }
+
   nav {
-    align-items: flex-start;
-    gap: 0.85rem;
+    align-items: stretch;
+    gap: 0.8rem;
     flex-direction: column;
-    padding: 1.1rem 1.25rem;
+    padding: 1rem 1rem 0.95rem;
   }
 
   nav ul {
     width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
     justify-content: flex-start;
-    gap: 0.85rem 1rem;
+    gap: 0.65rem;
+    padding-bottom: 0.2rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  nav ul::-webkit-scrollbar {
+    display: none;
+  }
+
+  nav ul a {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    padding: 0.6rem 0.82rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.035);
   }
 
   section {
@@ -2165,8 +2249,37 @@ footer a:hover {
   }
 
   #hero {
-    min-height: auto;
-    padding: 7.25rem 1.25rem 4rem;
+    min-height: 100svh;
+    justify-content: center;
+    padding: 8.8rem 1.25rem 3.7rem;
+  }
+
+  .hero-number {
+    top: 38%;
+    right: -0.08em;
+    font-size: 42vw;
+  }
+
+  .hero-sub {
+    max-width: 34ch;
+    line-height: 1.7;
+  }
+
+  .hero-cta {
+    gap: 0.8rem;
+  }
+
+  #about {
+    gap: 1.8rem;
+  }
+
+  .about-text p {
+    font-size: 0.98rem;
+    line-height: 1.75;
+  }
+
+  .about-text p:first-of-type {
+    font-size: 1.12rem;
   }
 
   .projects-header {
@@ -2179,8 +2292,50 @@ footer a:hover {
     align-self: flex-start;
   }
 
+  .project-category {
+    border-radius: 1.25rem;
+  }
+
+  .project-category-toggle {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .project-category-copy > p:last-of-type {
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  .project-category-meta span {
+    padding: 0.4rem 0.65rem;
+    letter-spacing: 0.13em;
+  }
+
+  .project-category-preview {
+    min-height: 176px;
+    margin-top: 0.15rem;
+  }
+
+  .project-preview-card {
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.34);
+  }
+
+  .project-list {
+    gap: 0.85rem;
+  }
+
+  .project-entry,
+  .project-carousel {
+    border-radius: 1rem;
+  }
+
+  .project-entry-body {
+    padding: 0.95rem 0.95rem 1.05rem;
+  }
+
   .contact-cards {
     grid-template-columns: 1fr;
+    gap: 0.85rem;
   }
 
   .contact-title br {
@@ -2202,28 +2357,101 @@ footer a:hover {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
   }
+
+  .skills-header {
+    margin-bottom: 1.9rem;
+  }
+
+  .skills-feature::after {
+    width: 180px;
+    height: 180px;
+  }
+
+  .skills-highlights {
+    margin-top: 1.3rem;
+  }
+
+  .detail-hero {
+    padding-top: 8.5rem;
+  }
+
+  .detail-hero-copy h1 {
+    font-size: clamp(2.6rem, 11vw, 4.4rem);
+  }
+
+  .detail-lead {
+    font-size: 0.96rem;
+    line-height: 1.72;
+  }
+
+  .detail-chip-list {
+    gap: 0.55rem;
+  }
+
+  .detail-chip {
+    flex: 1 1 calc(50% - 0.55rem);
+    min-height: 2.7rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .detail-card,
+  .detail-panel,
+  .detail-summary-card,
+  .detail-hero-aside,
+  .detail-hero-note {
+    padding: 1.15rem;
+  }
+
+  .project-detail-page .detail-section::before {
+    top: 0.85rem;
+    right: 1rem;
+  }
+
+  .project-detail-page .detail-gallery-shell::before,
+  .project-detail-page .detail-gallery-shell::after {
+    width: 1rem;
+  }
+
+  .project-detail-page .detail-gallery {
+    gap: 0.8rem;
+    padding: 0.15rem 18vw 0.95rem 0.1rem;
+    scroll-snap-type: x mandatory;
+  }
+
+  .project-detail-page .detail-gallery-item {
+    flex-basis: 80vw;
+  }
+
+  .project-detail-page .detail-gallery-item--featured {
+    flex-basis: 88vw;
+  }
+
+  .project-detail-page .detail-gallery-item figcaption {
+    padding: 0.85rem 0.9rem 0.95rem;
+    min-height: 0;
+  }
 }
 
 @media (max-width: 620px) {
   nav {
-    align-items: flex-start;
-    gap: 0.85rem;
-    flex-direction: column;
+    padding: 0.9rem 0.9rem 0.95rem;
   }
 
   nav ul {
-    width: 100%;
-    justify-content: flex-start;
-    gap: 0.85rem 1.2rem;
+    gap: 0.55rem;
   }
 
   nav ul a {
-    font-size: 0.74rem;
+    font-size: 0.72rem;
+    padding: 0.58rem 0.75rem;
   }
 
   #hero {
-    min-height: auto;
-    padding-top: 7.5rem;
+    padding-top: 8.4rem;
+    padding-bottom: 3.25rem;
   }
 
   .hero-tag {
@@ -2238,6 +2466,7 @@ footer a:hover {
   .hero-sub {
     max-width: 32ch;
     margin-bottom: 2rem;
+    font-size: 0.94rem;
   }
 
   .hero-sub br {
@@ -2268,6 +2497,9 @@ footer a:hover {
 
   .projects-count {
     align-self: flex-start;
+    width: 100%;
+    justify-content: center;
+    display: inline-flex;
   }
 
   .skills-feature h3,
@@ -2288,26 +2520,27 @@ footer a:hover {
   }
 
   .project-category-preview {
-    min-height: 190px;
+    min-height: 150px;
   }
 
   .project-preview-card-main {
-    width: 72%;
+    width: min(70%, 220px);
   }
 
   .project-preview-card-side {
-    width: 56%;
-    left: 0.2rem;
+    width: min(52%, 170px);
+    left: 0.3rem;
   }
 
   .project-list {
     grid-template-columns: 1fr;
-    padding: 1rem;
+    padding: 0.9rem;
+    gap: 0.75rem;
   }
 
   .project-carousel {
-    margin: 1rem 1rem 1rem;
-    padding: 1rem;
+    margin: 0.95rem;
+    padding: 0.95rem;
   }
 
   .project-carousel-header {
@@ -2329,11 +2562,11 @@ footer a:hover {
   }
 
   .detail-shell > section {
-    padding: 3.9rem 1.25rem;
+    padding: 3.45rem 1rem;
   }
 
   .detail-hero {
-    padding-top: 7.75rem;
+    padding-top: 8.45rem;
   }
 
   .detail-hero-layout,
@@ -2362,6 +2595,15 @@ footer a:hover {
   .detail-hero-aside,
   .detail-hero-note {
     padding: 1.15rem;
+  }
+
+  .detail-hero-copy h1 {
+    font-size: clamp(2.35rem, 12.5vw, 3.8rem);
+  }
+
+  .detail-lead {
+    font-size: 0.92rem;
+    line-height: 1.7;
   }
 
   .detail-decision-card {
@@ -2394,12 +2636,12 @@ footer a:hover {
   }
 
   .project-detail-page .detail-gallery {
-    padding-right: 0.45rem;
+    padding-right: 12vw;
   }
 
   .project-detail-page .detail-gallery-item,
   .project-detail-page .detail-gallery-item--featured {
-    flex-basis: min(86vw, 420px);
+    flex-basis: min(84vw, 420px);
   }
 
   .project-detail-page .detail-gallery-item figcaption {
@@ -2428,7 +2670,8 @@ footer a:hover {
   }
 
   .skills-tools span {
-    width: 100%;
+    width: auto;
+    flex: 1 1 calc(50% - 0.4rem);
     text-align: center;
   }
 
@@ -2460,21 +2703,26 @@ footer a:hover {
 }
 
 @media (max-width: 480px) {
+  html {
+    scroll-padding-top: 8.8rem;
+  }
+
   section {
     padding: 4.25rem 1rem;
   }
 
   nav {
-    padding: 1rem;
+    padding: 0.85rem 0.9rem 0.95rem;
   }
 
   #hero {
-    padding: 6.75rem 1rem 3.25rem;
+    padding: 8rem 1rem 3rem;
   }
 
   .hero-number {
-    right: -0.12em;
-    font-size: 48vw;
+    top: 30%;
+    right: -0.08em;
+    font-size: 38vw;
   }
 
   .hero-tag,
@@ -2496,7 +2744,7 @@ footer a:hover {
   }
 
   .project-category-preview {
-    min-height: 160px;
+    min-height: 140px;
   }
 
   .project-preview-card-main {
@@ -2509,16 +2757,16 @@ footer a:hover {
   }
 
   .project-entry-body {
-    padding: 0.9rem 0.9rem 1rem;
+    padding: 0.85rem 0.85rem 0.95rem;
   }
 
   .project-carousel {
-    margin: 0.95rem 0.95rem 0.95rem;
-    padding: 0.95rem;
+    margin: 0.8rem;
+    padding: 0.8rem;
   }
 
   .detail-shell > section {
-    padding: 3.6rem 1rem;
+    padding: 3.2rem 0.95rem;
   }
 
   .detail-chip-list {
@@ -2527,6 +2775,7 @@ footer a:hover {
 
   .detail-chip {
     width: 100%;
+    min-height: 2.55rem;
     text-align: center;
   }
 
@@ -2535,7 +2784,7 @@ footer a:hover {
   }
 
   .project-detail-page nav ul a {
-    width: 100%;
+    width: auto;
     justify-content: center;
   }
 
@@ -2544,7 +2793,7 @@ footer a:hover {
   }
 
   .skills-highlight {
-    grid-template-columns: 1fr;
+    grid-template-columns: auto 1fr;
   }
 
   .site-note {
