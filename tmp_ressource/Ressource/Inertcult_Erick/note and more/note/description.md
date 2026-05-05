@@ -1,0 +1,22 @@
+  
+
+- Tunnel représente les routes cachées, les passages secrets entre zones, le déplacement stratégique hors de vue des adversaires
+- Feu de forêt danger environnemental, carte malus qui bloque ou détruit des rails sur une zone
+- Panneau indicateur le choix de route, bifurcation stratégique, orienter sa compagnie vers une destination
+- Drapeau marquer un territoire, revendiquer une gare checkpoint
+- Fort / campement base militaire, point de contrôle, protection temporaire sur le plateau
+- Pyramide maya ancrage culturel Amérique Centrale, gare checkpoint majeure, zone de haute valeur
+- Localisation / pin position sur la carte, repérer une gare ou un adversaire
+- Igloo zone Amérique du Nord, checkpoint nordique, culture inuite
+- Cactus zone Far-West, obstacle ou terrain difficile, Amérique du Nord aride
+- Glyphe maya identité culturelle pile B, carte question Amérique Centrale, savoir précolombien
+- Bison faune emblématique d'Amérique du Nord, carte ressource ou bonus culturel pile A
+- Aigle chauve symbole de puissance, compagnie Pacific North Railway, carte pouvoir
+- Feuille d'érable zone Canada / Amérique du Nord, point de départ Vancouver ou Québec
+- Taco culture mexicaine, Amérique Centrale, carte culturelle pile B légère et accessible
+- Épées croisées duel entre joueurs, confrontation, déclencheur de combat de questions
+- Wagonnet minier ressources extraites, économie tycoon, gain de ressources brutes
+- Sac d'argent ressources monétaires, gain ou vol, économie du jeu
+- Couronne pouvoir, victoire d'un duel, domination sur les autres joueurs
+- Étoile de shériff autorité, zone Far-West, protection ou carte pouvoir Amérique du Nord
+- Orateur / tribun pouvoir sur les autres, influence, carte effet qui impose une action aux adversaires

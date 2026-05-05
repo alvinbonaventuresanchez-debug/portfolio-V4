@@ -1,0 +1,14 @@
+## ressource 
+- accumulation
+- il faut passer par des gare clef, tant que t'es pas dans la gare clef tu ne peux pas récupérer les ressource que ta déjà récupère
+- on demarre 0gold; 
+- distribution de gold
+	- 10
+	- 20
+	- 30
+	- 40
+	- 50
+	- bonus 200
+- carte a effet
+- 2 type de cartes
+	- pour prendre des piece
