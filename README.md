@@ -1,6 +1,6 @@
 # Portfolio Alvin Bonaventure-Sanchez
 
-Portfolio creatif statique realise en `HTML`, `CSS` et `JavaScript` vanilla. Le site presente un univers graphique personnel, des series photo, ainsi que des projets de cours avec une page de case study plus detaillee.
+Portfolio creatif statique realise en `HTML`, `CSS` et `JavaScript` vanilla. Le site presente un univers graphique personnel, des series photo, ainsi que des projets de cours avec des pages de case study plus detaillees.
 
 ## Objectif du projet
 
@@ -31,10 +31,12 @@ portfolio V4/
 |   |   `-- alvin-portfolio.js
 |   `-- images/
 |       |-- Alvin_CV.pdf
+|       |-- icone/
 |       |-- textures/
 |       `-- projects/
 |-- projects/
-|   `-- projet-photo-tatouage.html
+|   |-- projet-photo-tatouage.html
+|   `-- rails-et-savoirs.html
 `-- scripts/
     |-- optimize-portfolio-images.ps1
     `-- image-optimization-report.json
@@ -50,19 +52,25 @@ C'est la page d'accueil du portfolio. Elle contient les grandes sections du site
 - `about` : presentation du profil et de l'approche creative ;
 - `projects` : galerie principale organisee en 3 categories ;
 - `skills` : competences, outils et types de projets ;
-- `contact` : email, telephone, LinkedIn et CV.
+- `contact` : email, telephone, reseaux sociaux et CV.
 
 La section `projects` est le coeur du portfolio :
 
 - `Graphisme` affiche des affiches, compositions et recherches visuelles ;
 - `Photo` regroupe les series photo et plans de travail ;
-- `Cours` presente les projets academiques, dont un case study deja en ligne.
+- `Cours` presente les projets academiques, dont deux case studies deja en ligne.
 
 ### `projects/projet-photo-tatouage.html`
 
 Cette page est une etude de cas detaillee. Elle ne montre pas seulement des images : elle explique aussi le contexte, la problematique, le process, les decisions prises, les resultats et l'analyse critique du projet.
 
 L'idee est de montrer une vraie demarche de conception, pas seulement une galerie.
+
+### `projects/rails-et-savoirs.html`
+
+Cette page presente le projet de groupe `Raily`, un jeu de plateau interculturel autour des Ameriques.
+
+Elle rassemble le contexte, les objectifs pedagogiques, la logique de jeu, les supports visuels et le role de la direction graphique dans la construction du projet.
 
 ### `assets/css/alvin-portfolio.css`
 
@@ -107,6 +115,7 @@ L'animation d'intro de la home ne se joue qu'une fois par session grace a `sessi
 Ce dossier contient tous les medias du portfolio :
 
 - les images des projets ;
+- les icones SVG, dont l'icone de telechargement du CV ;
 - la texture `grain.svg` utilisee dans le fond ;
 - le `CV` telechargeable.
 

@@ -1992,6 +1992,27 @@ h2.section-title em {
   color: var(--accent2);
 }
 
+.contact-social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1.35rem;
+}
+
+.contact-cv-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.contact-cv-icon {
+  width: 1.05em;
+  height: 1.05em;
+  flex: 0 0 auto;
+  background: currentColor;
+  -webkit-mask: url("../images/icone/book-download.svg") center / contain no-repeat;
+  mask: url("../images/icone/book-download.svg") center / contain no-repeat;
+}
+
 footer {
   border-top: 1px solid var(--border);
   padding: 2rem 3rem;

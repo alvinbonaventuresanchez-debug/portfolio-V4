@@ -57,9 +57,9 @@ Les visuels de ce projet sont stockes dans :
 
 Les assets principaux utilises par la page sont maintenant :
 
-- `raily-project-logo.png`
-- `raily-question-cards-by-zone.png`
-- `raily-bonus-malus-cards.png`
+- `raily-project-logo.jpg`
+- `raily-question-cards-by-zone.jpg`
+- `raily-bonus-malus-cards.jpg`
 - `raily-game-board.pdf`
 
 Le JavaScript commun du portfolio gere automatiquement :
