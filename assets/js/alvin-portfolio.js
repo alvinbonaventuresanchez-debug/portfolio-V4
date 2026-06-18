@@ -239,7 +239,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         if (action) {
-          action.textContent = isOpen ? "Fermer" : "Cliquer pour ouvrir la categorie";
+          action.textContent = isOpen ? "Fermer" : "Voir les projets";
         }
       });
     };

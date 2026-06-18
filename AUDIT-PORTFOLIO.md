@@ -269,6 +269,16 @@ Objectif :
 
 Priorite : haute.
 
+Statut : fait.
+
+Resultat :
+
+- `Portfolio creatif 2025` a ete remplace par `Portfolio creatif` ;
+- les libelles `Cliquer pour ouvrir la categorie` ont ete remplaces par `Voir les projets` ;
+- `case study` a ete harmonise en `etude de cas` sur les textes visibles ;
+- `Publication prochaine` et `Projet de cours 03` ont ete remplaces par des formulations plus propres ;
+- `Selection`, `Execution` et `Process` ont ete francises dans l'interface.
+
 Pourquoi :
 
 - c'est visible immediatement ;
