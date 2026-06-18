@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const body = document.body;
   const reveals = document.querySelectorAll(".reveal");
   const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+  const currentYearElements = document.querySelectorAll("[data-current-year]");
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const siteIntro = document.querySelector(".site-intro");
   const shouldRunSiteIntro = body?.classList.contains("home-page")
@@ -37,6 +38,10 @@ document.addEventListener("DOMContentLoaded", () => {
   lazyImages.forEach((image) => {
     image.decoding = "async";
     image.fetchPriority = "low";
+  });
+
+  currentYearElements.forEach((element) => {
+    element.textContent = String(new Date().getFullYear());
   });
 
   if ("IntersectionObserver" in window) {

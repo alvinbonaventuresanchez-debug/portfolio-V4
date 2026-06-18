@@ -75,7 +75,14 @@ qui melangent atmosphere, rythme et impact graphique.
 
 ### Date du portfolio
 
-Le hero indique `Portfolio creatif 2025`.
+Le hero indiquait `Portfolio creatif 2025`.
+
+Statut : fait.
+
+Resultat :
+
+- le badge hero affiche maintenant `Portfolio creatif`, sans annee fixe ;
+- les annees des footers sont remplies automatiquement en JavaScript avec l'annee courante.
 
 Comme le projet continue d'evoluer, deux options sont possibles :
 
@@ -301,6 +308,16 @@ Objectif :
 ### Etape 3 - Ajouter les bases SEO et partage
 
 Priorite : haute.
+
+Statut : fait.
+
+Resultat :
+
+- une `meta description` a ete ajoutee sur la home et sur les deux pages projet ;
+- les balises Open Graph principales ont ete ajoutees ;
+- les balises Twitter Card ont ete ajoutees pour les apercus de lien ;
+- un favicon SVG a ete cree dans `assets/images/icone/favicon.svg` ;
+- une image de partage `og-cover.jpg` a ete creee dans `assets/images/`.
 
 Pourquoi :
 

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Alvin Bonaventure-Sanchez">
+  <rect width="64" height="64" rx="14" fill="#080810"/>
+  <circle cx="48" cy="16" r="18" fill="#7c5cfc" opacity="0.32"/>
+  <path d="M18 48 31.5 14h4.8L50 48h-6.4l-3-7.8H27.1L24.2 48H18Zm11.2-13.2h9.4l-4.7-12.6-4.7 12.6Z" fill="#f0eef8"/>
+  <path d="M27.1 40.2h13.5l3 7.8H50L36.3 14h-4.8L18 48h6.2l2.9-7.8Z" fill="#a78bfa" opacity="0.34"/>
+</svg>
