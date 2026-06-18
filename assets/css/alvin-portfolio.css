@@ -152,6 +152,84 @@ body::after {
   will-change: background, opacity;
 }
 
+/* Custom visual cursor (purple) */
+.custom-cursor {
+  position: fixed;
+  left: var(--cursor-x, 50vw);
+  top: var(--cursor-y, 50vh);
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #b590ff, #7c5cfc);
+  box-shadow: 0 0 12px rgba(124,92,252,0.65), 0 0 28px rgba(167,139,250,0.14) inset;
+  pointer-events: none;
+  z-index: 99999;
+  opacity: 0;
+  transition: opacity 0.12s ease, transform 0.06s linear;
+  will-change: transform, opacity;
+}
+
+/* Slight halo around cursor */
+.custom-cursor::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124,92,252,0.12) 0%, rgba(124,92,252,0.04) 40%, transparent 70%);
+  filter: blur(6px);
+}
+
+/* When visible, make cursor opaque */
+.custom-cursor.is-visible {
+  opacity: 1;
+}
+
+/* Hide native cursor when custom cursor active (force on all elements) */
+body.custom-cursor-enabled,
+body.custom-cursor-enabled * {
+  cursor: none !important;
+}
+
+/* Cursor states */
+.custom-cursor.is-pointer {
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(180deg, #d8c4ff, #9a73ff);
+  box-shadow: 0 0 16px rgba(124,92,252,0.8), 0 0 36px rgba(167,139,250,0.18) inset;
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.custom-cursor.is-zoom {
+  width: 22px;
+  height: 22px;
+  background: linear-gradient(180deg, #f3ecff, #c9a8ff);
+  box-shadow: 0 0 16px rgba(124,92,252,0.85), 0 0 40px rgba(167,139,250,0.18) inset;
+  transform: translate(-50%, -50%) scale(1.02);
+}
+
+.custom-cursor.is-zoom::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 14px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%237c5cfc'><path d='M10 4a6 6 0 1 1 0 12 6 6 0 0 1 0-12zm8.707 14.293-3.386-3.386A8 8 0 1 0 12 20a7.95 7.95 0 0 0 5.907-2.279l3.386 3.386a1 1 0 0 0 1.414-1.414z'/></svg>");
+  background-size: 14px 14px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* ensure zoom state takes precedence visually */
+.custom-cursor.is-pointer.is-zoom { }
+
+
 .site-intro {
   position: fixed;
   inset: 0;

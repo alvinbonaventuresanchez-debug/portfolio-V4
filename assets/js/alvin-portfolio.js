@@ -512,10 +512,23 @@ document.addEventListener("DOMContentLoaded", () => {
     let haloFrame = null;
     const glowBlocks = document.querySelectorAll(".project-category-toggle, .project-entry");
 
+    // create custom cursor element
+    const customCursor = document.createElement('div');
+    customCursor.className = 'custom-cursor';
+    document.body.appendChild(customCursor);
+    // enable class to hide native cursor
+    document.body.classList.add('custom-cursor-enabled');
+
     const renderMouseHalo = () => {
       body.style.setProperty("--cursor-x", `${cursorX}px`);
       body.style.setProperty("--cursor-y", `${cursorY}px`);
       haloFrame = null;
+
+      // move custom cursor with a small lerp for smoothness
+      const rectX = cursorX;
+      const rectY = cursorY;
+      customCursor.style.left = `${rectX}px`;
+      customCursor.style.top = `${rectY}px`;
     };
 
     const queueMouseHaloRender = () => {
@@ -532,15 +545,18 @@ document.addEventListener("DOMContentLoaded", () => {
       cursorX = event.clientX;
       cursorY = event.clientY;
       body.style.setProperty("--cursor-opacity", "1");
+      customCursor.classList.add('is-visible');
       queueMouseHaloRender();
     }, { passive: true });
 
     document.addEventListener("mouseleave", () => {
       body.style.setProperty("--cursor-opacity", "0");
+      customCursor.classList.remove('is-visible');
     });
 
     window.addEventListener("blur", () => {
       body.style.setProperty("--cursor-opacity", "0");
+      customCursor.classList.remove('is-visible');
     });
 
     glowBlocks.forEach((block) => {
@@ -552,17 +568,57 @@ document.addEventListener("DOMContentLoaded", () => {
         block.style.setProperty("--block-glow-x", `${localX}px`);
         block.style.setProperty("--block-glow-y", `${localY}px`);
         block.style.setProperty("--block-glow-opacity", "1");
+
+        // slightly enlarge cursor on hover for affordance
+        customCursor.style.transform = 'translate(-50%, -50%) scale(1.25)';
       };
 
       block.addEventListener("pointerenter", updateBlockGlow);
       block.addEventListener("pointermove", updateBlockGlow, { passive: true });
       block.addEventListener("pointerleave", () => {
         block.style.setProperty("--block-glow-opacity", "0");
+        customCursor.style.transform = 'translate(-50%, -50%) scale(1)';
       });
     });
+
+    // interactive elements: show different cursor states
+    try {
+      const clickableSelector = 'a, button, [role="button"], input, textarea, select, label';
+      const clickables = document.querySelectorAll(clickableSelector);
+
+      clickables.forEach((el) => {
+        el.addEventListener('pointerenter', () => {
+          customCursor.classList.add('is-pointer');
+        });
+        el.addEventListener('pointerleave', () => {
+          customCursor.classList.remove('is-pointer');
+        });
+      });
+
+      const zoomableSelector = '.lightboxable-image, .lightboxable-link, .project-entry-media-link, .project-entry-image';
+      const zoomables = document.querySelectorAll(zoomableSelector);
+
+      zoomables.forEach((el) => {
+        el.addEventListener('pointerenter', () => {
+          customCursor.classList.add('is-zoom');
+        });
+        el.addEventListener('pointerleave', () => {
+          customCursor.classList.remove('is-zoom');
+        });
+      });
+    } catch (e) {
+      // ignore if DOM changes rapidly
+    }
+
+    // small touch: hide custom cursor on touchstart devices
+    window.addEventListener('touchstart', () => {
+      customCursor.style.display = 'none';
+      document.body.classList.remove('custom-cursor-enabled');
+    }, { passive: true });
   }
 
   const nav = document.querySelector("nav");
+
   const updateNavBorder = () => {
     if (!nav) {
       return;
