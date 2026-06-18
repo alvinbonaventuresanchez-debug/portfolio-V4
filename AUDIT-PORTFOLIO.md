@@ -341,6 +341,16 @@ Objectif :
 
 Priorite : moyenne haute.
 
+Statut : fait.
+
+Resultat :
+
+- les icones locales `mail.svg`, `phone.svg`, `linkedin.svg`, `instagram.svg`, `book-download.svg`, `arrow-right.svg`, `arrow-left.svg`, `chevron-down.svg` et `zoom-in.svg` sont disponibles dans `assets/images/icone/` ;
+- les cartes Contact utilisent maintenant des icones pour Email, Telephone, Reseaux et CV ;
+- les liens sociaux affichent les icones LinkedIn et Instagram ;
+- les CTA `Voir l'etude de cas` utilisent une icone `arrow-right.svg` au lieu d'une fleche texte ;
+- les images ouvrables en lightbox affichent un indicateur discret `zoom-in.svg`.
+
 Pourquoi :
 
 - les icones rendent l'interface plus lisible ;
@@ -359,7 +369,6 @@ A faire en premier :
 A faire ensuite :
 
 - `arrow-left.svg`
-- `external-link.svg`
 - `zoom-in.svg`
 
 Objectif :
@@ -369,6 +378,16 @@ Objectif :
 ### Etape 5 - Ameliorer les interactions des projets
 
 Priorite : moyenne.
+
+Statut : fait.
+
+Resultat :
+
+- les categories gardent le libelle `Voir les projets` / `Fermer` ;
+- chaque categorie affiche un chevron `chevron-down.svg` qui tourne quand la categorie est ouverte ;
+- les boutons du carousel utilisent `arrow-left.svg` et `arrow-right.svg` tout en conservant leurs `aria-label` ;
+- les CTA de projet ont un alignement, un hover et un focus-visible coherents avec les autres interactions ;
+- la logique existante du carousel, des categories, du lazy loading et de la lightbox n'a pas ete modifiee.
 
 Pourquoi :
 

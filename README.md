@@ -1,6 +1,6 @@
 # Portfolio Alvin Bonaventure-Sanchez
 
-Portfolio creatif statique realise en `HTML`, `CSS` et `JavaScript` vanilla. Le site presente un univers graphique personnel, des series photo, ainsi que des projets de cours avec des pages de case study plus detaillees.
+Portfolio creatif statique realise en `HTML`, `CSS` et `JavaScript` vanilla. Le site presente un univers graphique personnel, des series photo, ainsi que des projets de cours avec des pages d'etude de cas plus detaillees.
 
 ## Objectif du projet
 
@@ -33,6 +33,7 @@ portfolio V4/
 |       |-- Alvin_CV.pdf
 |       |-- icone/
 |       |-- textures/
+|       |-- og-cover.jpg
 |       `-- projects/
 |-- projects/
 |   |-- projet-photo-tatouage.html
@@ -58,7 +59,7 @@ La section `projects` est le coeur du portfolio :
 
 - `Graphisme` affiche des affiches, compositions et recherches visuelles ;
 - `Photo` regroupe les series photo et plans de travail ;
-- `Cours` presente les projets academiques, dont deux case studies deja en ligne.
+- `Cours` presente les projets academiques, dont deux etudes de cas deja en ligne.
 
 ### `projects/projet-photo-tatouage.html`
 
@@ -79,15 +80,17 @@ Feuille de style principale partagee par tout le site.
 Elle gere :
 
 - les variables globales de couleur, typo et ambiance ;
+- les icones SVG locales via des masques CSS en `currentColor` ;
 - la navigation fixe ;
 - la mise en page des sections ;
 - les cartes de projets ;
 - la page de detail ;
 - la lightbox ;
+- les indicateurs visuels `zoom-in` sur les images ouvrables ;
 - les animations d'apparition ;
 - les breakpoints responsive.
 
-Le CSS porte une grande partie de l'identite visuelle du portfolio : fond sombre, glow, grain, contrastes, cartes, superpositions et animations.
+Le CSS porte une grande partie de l'identite visuelle du portfolio : fond sombre, glow, grain, contrastes, cartes, superpositions, icones violettes et animations.
 
 ### `assets/js/alvin-portfolio.js`
 
@@ -101,6 +104,7 @@ Fonctionnalites principales :
 - amelioration du chargement des images (`loading="lazy"`, `decoding="async"`, priorite basse) ;
 - ouverture/fermeture des categories de projets ;
 - creation d'un carousel responsive quand une categorie contient beaucoup d'elements ;
+- mise a jour des libelles de categories entre `Voir les projets` et `Fermer` ;
 - chargement differe des images marquees avec `data-src` ;
 - lightbox pour agrandir les visuels ;
 - sur la page projet, surlignage du lien de section actif pendant le scroll ;
@@ -115,8 +119,9 @@ L'animation d'intro de la home ne se joue qu'une fois par session grace a `sessi
 Ce dossier contient tous les medias du portfolio :
 
 - les images des projets ;
-- les icones SVG, dont l'icone de telechargement du CV ;
+- les icones SVG locales : contact, reseaux sociaux, fleches, chevrons, zoom et telechargement du CV ;
 - la texture `grain.svg` utilisee dans le fond ;
+- l'image de partage `og-cover.jpg` ;
 - le `CV` telechargeable.
 
 Les images sont rangees par categories, ce qui aide a garder une organisation coherente entre le contenu visuel et le HTML.
@@ -186,7 +191,18 @@ Les contenus sont ecrits directement dans les fichiers HTML :
 - Le site est volontairement sans framework pour rester leger et facile a relire.
 - Le meme CSS et le meme JS sont reutilises entre la home et la page projet.
 - Plusieurs elements utilisent des attributs `aria-*` pour ameliorer l'accessibilite.
+- Les icones sont stockees dans `assets/images/icone/` et appliquees en CSS avec `.icon-mask`, ce qui permet de les recolorer dans la direction artistique du site.
+- Les boutons du carousel gardent des `aria-label`, meme si leur contenu visible est maintenant une icone.
+- Les images ouvrables en lightbox sont signalees visuellement par un indicateur `zoom-in`.
 - Certains chemins d'images contiennent des espaces et des accents : il faut donc faire attention a leur encodage dans le HTML.
+
+## Etat actuel des finitions
+
+- Images lourdes optimisees et chemins web mis a jour.
+- Textes visibles harmonises en francais, notamment `etude de cas`.
+- Bases SEO ajoutees : meta descriptions, Open Graph, Twitter Card, favicon et image de partage.
+- Icones utiles ajoutees : email, telephone, LinkedIn, Instagram, fleches, chevrons, zoom et CV.
+- Interactions projets finalisees : chevrons rotatifs, carousel avec icones accessibles, CTA coherents et indicateurs de lightbox.
 
 ## Resume
 

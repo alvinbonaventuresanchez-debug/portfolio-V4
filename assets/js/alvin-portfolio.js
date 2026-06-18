@@ -101,8 +101,12 @@ document.addEventListener("DOMContentLoaded", () => {
           <p class="project-carousel-label">Autres visuels</p>
           <div class="project-carousel-controls">
             <span class="project-carousel-status" aria-live="polite"></span>
-            <button class="project-carousel-arrow" type="button" data-direction="prev" aria-label="Voir les elements precedents">&larr;</button>
-            <button class="project-carousel-arrow" type="button" data-direction="next" aria-label="Voir les elements suivants">&rarr;</button>
+            <button class="project-carousel-arrow" type="button" data-direction="prev" aria-label="Voir les elements precedents">
+              <span class="project-carousel-arrow-icon icon-mask icon-arrow-left" aria-hidden="true"></span>
+            </button>
+            <button class="project-carousel-arrow" type="button" data-direction="next" aria-label="Voir les elements suivants">
+              <span class="project-carousel-arrow-icon icon-mask icon-arrow-right" aria-hidden="true"></span>
+            </button>
           </div>
         </div>
         <div class="project-carousel-viewport">
@@ -226,7 +230,7 @@ document.addEventListener("DOMContentLoaded", () => {
       projectCategories.forEach((category) => {
         const toggle = category.querySelector(".project-category-toggle");
         const panel = category.querySelector(".project-category-panel");
-        const action = category.querySelector(".project-category-action");
+        const actionText = category.querySelector(".project-category-action-text");
         const isOpen = category === activeCategory;
 
         if (isOpen) {
@@ -243,8 +247,8 @@ document.addEventListener("DOMContentLoaded", () => {
           panel.setAttribute("aria-hidden", String(!isOpen));
         }
 
-        if (action) {
-          action.textContent = isOpen ? "Fermer" : "Voir les projets";
+        if (actionText) {
+          actionText.textContent = isOpen ? "Fermer" : "Voir les projets";
         }
       });
     };
